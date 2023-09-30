@@ -41,7 +41,7 @@ class song(models.Model):
         return self.title
     
 
-class Interaction(models.Model):
+class interaction(models.Model):
     id = models.BigAutoField(primary_key=True)  
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     song = models.ForeignKey(song, on_delete=models.CASCADE)
@@ -53,7 +53,7 @@ class Interaction(models.Model):
     def __str__(self):
         return f"Interaction between {self.user} and {self.song}"
 
-class Playlist(models.Model):
+class playlist(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
@@ -67,7 +67,7 @@ class Playlist(models.Model):
 
 class PlaylistSong(models.Model):
     id = models.AutoField(primary_key=True)
-    playlist = models.ForeignKey(Playlist, on_delete=models.CASCADE)
+    playlist = models.ForeignKey(playlist, on_delete=models.CASCADE)
     song = models.ForeignKey(song, on_delete=models.CASCADE)
 
     def __str__(self):
