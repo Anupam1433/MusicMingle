@@ -9,8 +9,8 @@ class artist(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
 
 class album(models.Model):
     id = models.CharField(max_length=36, primary_key=True)
@@ -20,8 +20,8 @@ class album(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
 
 
 class song(models.Model):
@@ -37,8 +37,8 @@ class song(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.title
+    # def __str__(self):
+    #     return self.title
     
 
 class interaction(models.Model):
@@ -50,8 +50,8 @@ class interaction(models.Model):
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
 
-    def __str__(self):
-        return f"Interaction between {self.user} and {self.song}"
+    # def __str__(self):
+    #     return f"Interaction between {self.user} and {self.song}"
 
 class playlist(models.Model):
     id = models.AutoField(primary_key=True)
@@ -61,8 +61,8 @@ class playlist(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
 
 
 class PlaylistSong(models.Model):
@@ -70,8 +70,8 @@ class PlaylistSong(models.Model):
     playlist = models.ForeignKey(playlist, on_delete=models.CASCADE)
     song = models.ForeignKey(song, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return f"{self.playlist} - {self.song}"
+    # def __str__(self):
+    #     return f"{self.playlist} - {self.song}"
 
 
 
