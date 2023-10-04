@@ -9,8 +9,8 @@ class artist(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
 
 class album(models.Model):
     id = models.CharField(max_length=36, primary_key=True)
