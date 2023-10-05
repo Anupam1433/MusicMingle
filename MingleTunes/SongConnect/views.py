@@ -28,7 +28,7 @@ def index(request):
 
 def artistDetails(request):
     artistSong = song.objects.all()
-    return render(request,template_name="mingletunes/details.html", context={"attistSong": artistSong})
+    return render(request,template_name="mingletunes/details.html", context={"artistSong": artistSong})
 
 
 
